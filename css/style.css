@@ -1,106 +1,244 @@
-/* Global */
-* {
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  header {
-    background: #47a0ce;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav {
-    padding: 30px 15px 15px 15px;
-  }
-  
-  nav a {
-    font-size: 22px;
-    margin: 0 20px;
-    color: black;
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    padding: 60px 15px;
-  }
-  
-  #logo-container {
-    display: inline-block;
-    padding-top: 10px;
-    background: #47a0ce;
-    position: relative;
-    top: 20px;
-    padding: 10px;
-  }
-  
-  #logo-container h2 {
-    margin-bottom: 0;
-  }
-  
-  .bg-dark {
-    color: #47a0ce;
-    background: black;
-  }
-  
-  .bg-dark a {
-    color: #47a0ce;
-  }
-  
-  #hero {
-    background: black;
-    background-image: url("../images/background.png");
-    color: white;
-    text-align: center;
-    padding: 60px 15px;
-    font-size: 42px;
-  }
-  
-  .callout {
-    border: 5px dotted #47a0ce;
-    text-align: center;
-    margin: 0 30px;
-  }
+:root {
+  --brandPrimary: #47a0ce;
+  --brandSecondary: #47ce86;
+  --brandSecondaryDark: #32b46f;
+  --primaryBorder: 6px solid var(--brandPrimary);
+  --secondaryBorder: 6px solid var(--brandSecondary);
+  --borderRadius: 15px;
+  --awesomeRadius: 0px var(--borderRadius) 0px var(--borderRadius);
+  --transition: all 260ms ease-in-out;
+}
 
-  #gallery {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Global sekector */
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--brandPrimary);
+  text-align: center;
+}
+
+nav {
+  padding: 30px 15px 15px 15px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: black;
+  background: var(--brandSecondary);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 25px;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--brandSecondaryDark)
+}
+
+.btn:hover {
+  background: var(--brandSecondaryDark);
+}
+
+.text-primary {
+  color: var(--brandPrimary);
+}
+
+.text-secondary {
+  color: var(--brandSecondary);
+}
+
+nav a {
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 0 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 15px;
+}
+
+#logo-container {
+  display: inline-block;
+  padding-top: 10px;
+  background: var(--brandPrimary);
+  position: relative;
+  top: 20px;
+  padding: 10px;
+}
+
+#logo-container h2 {
+  margin-bottom: 0;
+}
+
+.bg-dark {
+  background: black;
+  color: var(--brandPrimary);
+}
+
+.bg-dark a {
+  color: var(--brandPrimary);
+}
+
+#hero {
+  background: black;
+  background-image: url("../images/background.png");
+  border-bottom: var(--primaryBorder);
+  color: white;
+  text-align: center;
+  padding: 60px 15px;
+  font-size: 42px;
+}
+
+.callout {
+  border: 6px dotted var(--brandPrimary);
+  text-align: center;
+  margin: 0 30px;
+  padding: 30px 15px;
+  flex: 1 0 400px;
+  margin-bottom: 25px;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .gallery-item {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  border: var(--primaryBorder);
   background: black;
   color: white;
-  margin: 2px;
+  border-radius: var(--awesomeRadius);
+  margin: 5px;
   width: 240px;
   height: 240px;
-  justify-content: center;
-  align-items: center;
+  font-weight: bold;
+  position: relative;
+  transition: var(--transition);
+}
+
+.on-sale {
+  background: var(--brandSecondary);
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: 10px; 
+  left: 0;
+}
+
+.gallery-item i {
+  transition: var(--transition);
+}
+
+.gallery-item p {
+  margin: 0;
+}
+
+.gallery-item:hover {
+  background-color: var(--brandSecondary);
+  border-color: white; 
+  color: black;
+}
+
+.gallery-item:hover .on-sale {
+  background: white;
+}
+
+.gallery-item:hover i {
+  transform: scale(1.25);
+}
+
+.socials a {
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--primaryBorder);
+  padding: 15px;
+  margin-top: 60px;
 }
 
-.flex-footer {
-    display: flex;
-    justify-content: space-between;
+/* Media Queries */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  header nav {
+    background: black;
+  }
+
+  header nav a {
+    color: var(--brandPrimary);
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .callout {
+    flex: 1;
+  }
+
+  #hero h1,
+  #hero a {
+    font-size: 30px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
 }
 
-.bold {
-    font-weight: bold;
+/* media queries */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav {
+    background-color: black;
+  }
+
+  nav a {
+    color: var(--blue);
+    margin: 0 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 25px;
+  }
 }
